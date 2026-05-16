@@ -22,9 +22,7 @@ public class AddressController {
     @GetMapping("/address")
     public Mono<Map<String, String>> searchAddress(
 
-            @RequestParam String street,
-            @RequestParam String city,
-            @RequestParam String state
+            @RequestParam String city
 
     ) {
 
@@ -34,9 +32,9 @@ public class AddressController {
                         .scheme("https")
                         .host("nominatim.openstreetmap.org")
                         .path("/search")
-                        .queryParam("street", street)
+                        //.queryParam("street", street)
                         .queryParam("city", city)
-                        .queryParam("state", state)
+                        //.queryParam("state", state)
                         .queryParam("format", "json")
                         .queryParam("addressdetails", 1)
                         .build()
