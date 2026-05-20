@@ -29,6 +29,7 @@ public class S3Controller {
 
     @GetMapping("/files")
     public ResponseEntity<List<String>> listFiles() {
+
         return ResponseEntity.ok(service.listFiles());
     }
 }
